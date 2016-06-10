@@ -1,0 +1,25 @@
+{
+  "name": "project1",
+  "images": [
+    {"id":1, "path": "braco.png"},
+    {"id":2, "path": "pe.png"}
+  ],
+  "animations": {
+    "amimation1": {
+      "name": "animation1",
+      "frames": [{
+        "id": 0,
+        "layers":{
+          "layer1": {
+            "id": "layer01",
+            "images": [
+              {"type":"normal", "id":1, "x": 0, "y": 0, "yrot": 0, "xrot": 0, "xscale": 0, "yxscale": 0},
+              {"type":"normal", "id":2, "x": 0, "y": 0, "yrot": 0, "xrot": 0, "xscale": 0, "yxscale": 0},
+              {"type":"mesh", "reservado":"nem sera lido pelo processador serve apenas para indicar isso pro futuro"}
+            ]
+          }
+        }
+      }]
+    }
+  }
+}

@@ -1,0 +1,141 @@
+<html>
+  <head>
+    <title>Angular 2 QuickStart JS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="library/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="library/main-style.css" rel="stylesheet">
+
+  </head>
+
+  <!-- 3. Display the application -->
+  <body>
+
+
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><span>Brand</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active">
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">Contacts</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="section section-info">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="btn-toolbar" role="toolbar">
+
+              <div class="btn-group">
+                <a type="button" class="btn btn-primary" id="new-project-button"><i class="fa fa-3x fa-fw -circle fa-file"></i></a>
+                <a type="button" class="btn btn-primary" id="save-project-button"><i class="fa fa-3x fa-fw -circle fa-save"></i></a>
+                <a type="button" class="btn btn-primary" id="add-image-button"  data-bind="click: add_image" ><i class="fa fa-3x fa-fw fa-image"></i></a>
+              </div>
+
+              <div class="btn-group">
+                <a type="button" class="btn btn-primary" id="play-button" data-bind="click: play"><i class="fa fa-3x fa-fw -circle fa-play-circle"></i></a>
+                <a type="button" class="btn btn-primary" id="stop-button" data-bind="click: stop"><i class="fa fa-3x fa-fw -circle fa-stop"></i></a>
+                <a type="button" class="btn btn-primary" id="step-button" data-bind="click: step_frame"><i class="fa fa-3x fa-fw -circle fa-step-forward"></i></a>
+              </div>
+
+              <div class="btn-group">
+                  <a type="button" class="btn btn-primary" id="add-frame-button" data-bind="click: add_frame"><i class="fa fa-3x fa-fw fa-plus-circle"></i></a>
+                  <a type="button" class="btn btn-primary" id="rem-frame-button" data-bind="click: remove_frame"><i class="fa fa-3x fa-fw fa-minus-circle"></i></a>
+              </div>
+
+              <div class="btn-group">
+                <a type="button" class="btn btn-primary" id="up-img-button" data-bind="click: up_image"><i class="fa fa-3x fa-fw -circle fa-arrow-circle-up"></i></a>
+                <a type="button" class="btn btn-primary" id="down-img-button" data-bind="click: down_image"><i class="fa fa-3x fa-fw -circle fa-arrow-circle-down"></i></a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section" style="margin-top:10px;">
+      <div class="container" id="images-container">
+        <div class="row">
+          <div class="col-md-2">
+            <a href="#"><img src="imgs/placeholder.png" class="img-responsive"></a>
+          </div>
+          <div class="col-md-10 canvas-border" id="canvas-container">
+            <canvas id="editor-canvas" style="width:100%; height:100%;"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+
+          <div style="width:100%;" data-bind='component: { name: "time-line", params: { parent: $root }}'></div>
+
+          <div class="col-md-12 text-center">
+            <ul class="pagination">
+
+              <li>
+                <a href="#">Prev</a>
+              </li>
+
+              <!-- ko foreach: current_animation.frames -->
+
+                    <li data-bind="css: { active: $data.selected }, click: $parent.select_frame">
+                      <a href="#" data-bind="text: id" ></a>
+                    </li>
+
+              <!-- /ko -->
+
+              <li>
+                <a href="#">Next</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCRIPTS -->
+
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+    <script src="node_modules/createjs-easeljs/lib/easeljs-0.8.2.min.js"></script>
+    <script src="library/fabric.js-1.6.2/dist/fabric.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script src="bower_components/knockout/dist/knockout.js"></script>
+
+    <script>if (window.module) module = window.module;</script>
+
+    <!-- 2. Load our 'modules' -->
+    <!-- <script src='angular_app/app.component.js'></script> -->
+    <!-- <script src='angular_app/main.js'></script> -->
+    <script>
+      // window.nunjucks = require('nunjucks')
+      // require('./angular_app/app.component.js')
+      // require('./angular_app/main.js')
+      require('./knockout_app/timeline_component.js')
+      require('./knockout_app/main_controller.js')
+      // require('./knockout_app/main.js')
+    </script>
+
+  </body>
+
+</html>

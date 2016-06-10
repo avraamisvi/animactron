@@ -1,0 +1,33 @@
+Features:
+
+  Tem que transicionar de um frame para outro de forma linear, easing functions.
+  Tem que permitir que uma imagem fique invisivel para poder ver quem esta atrás.
+  ordenar o nivel das imagens.
+  timeline ao inves de lista de frames
+  nao forçar a criação de frames para cada momento no tempo.
+  listagem de imagens ( talvez usando uma pasta base por projeto )
+  efeitos ( como fadein, fadeout)
+  salvar para arquivo no formato json exportar para png ( com as imagens embarcadas e o json embarcado )
+  abrir arquivo salvo
+  importar o png (do projeto)
+  tocar animações
+  permitir o teste por controles (tipo gamepad)
+  ***Skeletons animations
+
+  Tarefas:
+
+  Criar timeline
+      Apagar, editar, criar frames
+      Timeline deve permitir a inclusao, exclusão e edição de frames ao longo da linha temporal.
+      De um frame para outro a transição deve ser linear ao longo do tempo
+
+Lista de imagens
+
+      Lista as imagens
+      Arrastar e soltar imagen na caixa de imagens e animaçao
+
+Controles de play
+      Play
+      Stop
+      Avançar
+      Voltar
